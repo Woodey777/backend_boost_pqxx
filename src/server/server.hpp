@@ -1,7 +1,10 @@
 #ifndef SERVER_SERVER_HPP
 #define SERVER_SERVER_HPP
 
+#include <iostream>
+#include <memory>
 #include <boost/asio.hpp>
+#include "httpsession.hpp"
 
 class HttpServer {
 private:
@@ -17,4 +20,4 @@ public:
 };
 
 
-#endif
+#endif  // SERVER_SERVER_HPP

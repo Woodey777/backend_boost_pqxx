@@ -2,11 +2,12 @@
 #include <iostream>
 // #include <pqxx/pqxx>
 #include <exception>
+#include <boost/beast.hpp>
 #include "server/server.hpp"
 
 int main() {
   try {
-    HttpServer serv(8080);
+    HttpServer serv(1234);
     serv.run();
   } catch (std::exception &exc) {
     std::cout << "ERROR: " << exc.what() << std::endl;

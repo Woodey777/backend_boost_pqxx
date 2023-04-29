@@ -1,23 +1,23 @@
 #ifndef SERVER_SERVER_HPP
 #define SERVER_SERVER_HPP
 
+#include <boost/asio.hpp>
 #include <iostream>
 #include <memory>
-#include <boost/asio.hpp>
-#include "httpsession.hpp"
+
+#include "HttpSession.hpp"
 
 class HttpServer {
-private:
-    boost::asio::io_context context_;
-    boost::asio::ip::tcp::acceptor acceptor_;
+ private:
+  boost::asio::io_context m_context;
+  boost::asio::ip::tcp::acceptor m_acceptor;
 
-    void do_accept();
+  void doAccept();
 
-public:
-    explicit HttpServer(short port);
+ public:
+  explicit HttpServer(short port);
 
-    void run();
+  void run();
 };
-
 
 #endif  // SERVER_SERVER_HPP

@@ -4,8 +4,8 @@
             "name": "Mac c++",
             "includePath": [
                 "${workspaceFolder}/**",
-                "/usr/local/include/boost",
-                "/opt/local/include/boost"
+                "/opt/local/include",
+                "/usr/local/include"
             ],
             "defines": [],
             "macFrameworkPath": [

@@ -1,9 +1,10 @@
 
 #include <iostream>
 // #include <pqxx/pqxx>
-#include <exception>
 #include <boost/beast.hpp>
-#include "server/server.hpp"
+#include <exception>
+
+#include "server/Server.hpp"
 
 int main() {
   try {
@@ -26,7 +27,8 @@ int main() {
 //     pqxx::result res = executor.exec("select * from users");
 
 //     for (auto el : res) {
-//         std::cout << "Id: |" << el[0] << " name: |" << el[1] << " age: " << el[2] << std::endl;
+//         std::cout << "Id: |" << el[0] << " name: |" << el[1] << " age: " <<
+//         el[2] << std::endl;
 //     }
 
 //   } catch (const std::exception& e) {

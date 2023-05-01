@@ -1,7 +1,6 @@
 #include "Peer.hpp"
 
 Peer::Peer(const nlohmann::json& json) {
-  std::cout << "#" << json.count("id") << "#" << std::endl;
   if (json.count("id") != 0) {
     m_id = json.at("id").get<int>();
   }
@@ -52,6 +51,7 @@ void peer_to_json(nlohmann::json& json, const Peer& peer) {
 }
 
 std::string sql_insert_peer(const Peer& peer) {
-  return "INSERT INTO peers (name, login, xp) VALUES ('" + peer.getName() + "', '" +
-         peer.getLogin() + "', " + std::to_string(peer.getXp()) + ")";
+  return "INSERT INTO peers (name, login, xp) VALUES ('" + peer.getName()               + "', '" +
+                                                           peer.getLogin()              + "', '" +
+                                                           std::to_string(peer.getXp()) + "');";
 }

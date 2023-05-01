@@ -9,9 +9,9 @@ RUN make build
 FROM ubuntu:latest AS run_step
 
 EXPOSE 1234
+RUN apt-get update && apt-get install -y libpqxx-dev
 WORKDIR /app
 COPY --from=build_step /app/src/backend /app/backend
-RUN apt-get update && apt-get install -y libpqxx-dev
 
 ENTRYPOINT [ "./backend" ]
 
